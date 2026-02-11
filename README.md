@@ -1,29 +1,29 @@
-# Currency Converter
+# Currency Converter (React + Vite)
 
-A simple, responsive currency converter built with HTML, CSS, and JavaScript. It uses the Frankfurter exchange rates API to convert between USD, INR, EUR, and GBP.
+A beginner-friendly currency converter built with React. It uses the Frankfurter API to convert between USD, INR, EUR, and GBP.
 
 ## Features
-- Convert between USD, INR, EUR, and GBP
-- Clean, centered UI with a gradient background
-- Live conversion via the Frankfurter API
-- Input validation and basic error handling
+- React state with simple `useState` hooks
+- Input validation
+- Loading state while fetching data
+- Basic error handling
+- Clean responsive UI
 
 ## Project Structure
-- `index.html` - Markup for the converter UI
-- `style.css` - Styling for layout and visuals
-- `script.js` - Conversion logic and API call
+- `index.html` - App entry HTML
+- `src/main.jsx` - React root render
+- `src/App.jsx` - Converter UI and logic
+- `src/index.css` - Styling
 
-## Getting Started
-1. Open `index.html` in your browser.
-2. Enter an amount.
-3. Choose the source and target currencies.
-4. Click `Convert`.
+## Run Locally
+1. Open terminal in project folder:
+   - `cd "Currency Dxd"`
+2. Install packages:
+   - `npm install`
+3. Start development server:
+   - `npm run dev`
+4. Open the local URL shown in terminal (usually `http://localhost:5173`).
 
-## Notes
-- Requires an internet connection to fetch exchange rates.
-- Uses `https://api.frankfurter.app` for conversion data.
-
-## Customize
-- Add more currencies by editing the `<option>` lists in `index.html`.
-- Tweak styles in `style.css`.
-
+## Build for Production
+- `npm run build`
+- `npm run preview`
