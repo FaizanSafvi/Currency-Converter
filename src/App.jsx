@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const currencies = ["USD", "INR", "EUR", "GBP"];
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:4000";
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -26,7 +27,7 @@ function App() {
     setResultText("Converting...");
 
     try {
-      const url = `https://api.frankfurter.app/latest?amount=${numericAmount}&from=${fromCurrency}&to=${toCurrency}`;
+      const url = `${API_BASE_URL}/api/convert?amount=${numericAmount}&from=${fromCurrency}&to=${toCurrency}`;
       const response = await fetch(url);
 
       if (!response.ok) {
@@ -34,7 +35,7 @@ function App() {
       }
 
       const data = await response.json();
-      const convertedValue = data.rates[toCurrency];
+      const convertedValue = data.convertedAmount;
 
       setResultText(`${numericAmount} ${fromCurrency} = ${convertedValue} ${toCurrency}`);
     } catch {
